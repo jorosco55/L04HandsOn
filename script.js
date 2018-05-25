@@ -43,48 +43,70 @@ class Employee {
 
 }
 
-class newManager extends Employee {
-    constructor(jobDescription, yearsExperience, degreeCompleted,name, salary, hireDate) {
-        super(name, salary, hireDate);
+class Manager extends Employee {
+    constructor(name, jobDescription, yearsExperience, degreeCompleted, hireDate, salary) {
+        super(name, hireDate,salary);
 
+        this.name = name;
+        this.hireDate = hireDate;
         this.jobDescription = jobDescription;
         this.yearsExperience = yearsExperience;
         this.degreeCompleted = degreeCompleted;
     }
 
     managerInfo() {
-        console.log(John._name + " is the the new " + this.jobDescription + ", she has " + this.yearsExperience + " years of experience and graduated with a " + this.degreeCompleted + " degree." +
-         "her hire date will be " + John._hireDate)
+        console.log(this.name + " is the the new " + this.jobDescription + ", she has " + this.yearsExperience + " years of experience and graduated with a " + this.degreeCompleted + " degree." +
+         " Her hire date will be " + this.hireDate)
     }
 }
 
-class newDesigner extends Employee {
-    constructor(jobDescription, yearsExperience, degreeCompleted,name, salary, hireDate) {
+class Designer extends Employee {
+    constructor(name, jobDescription, yearsExperience, degreeCompleted, salary, hireDate) {
         super(name, salary, hireDate);
 
-
+        this.name = name;
         this.jobDescription = jobDescription;
         this.yearsExperience = yearsExperience;
         this.degreeCompleted = degreeCompleted;
     }
 
     designerInfo() {
-        console.log(John._name + " is the the new " + this.jobDescription + ", she has " + this.yearsExperience + " years of experience and graduated with a " + this.degreeCompleted + " degree." +
-            "her hire date will be " + John._hireDate)
+        console.log(this.name + " is the the new " + this.jobDescription + ", she has " + this.yearsExperience + " years of experience and graduated with a " + this.degreeCompleted + " degree." +
+            " Her hire date will be " + John._hireDate)
+    }
+}
+
+class SalesAssociate extends Employee {
+    constructor(name, jobDescription, yearsExperience, degreeCompleted, hireDate, salary) {
+        super(name, salary, hireDate);
+
+        this.name = name;
+        this.hireDate = hireDate;
+        this.jobDescription = jobDescription;
+        this.yearsExperience = yearsExperience;
+        this.degreeCompleted = degreeCompleted;
+    }
+
+    salesAssociateInfo() {
+        console.log(this.name + " is the the new " + this.jobDescription + ", she has " + this.yearsExperience + " years of experience and graduated with a " + this.degreeCompleted + " degree." +
+            " Her hire date will be " + this.hireDate)
     }
 }
 
 
 
 
-let John = new Employee("Kirstie", "$80k", "05-25-2018");
+let John = new Employee("John", "$80k", "05-25-2018");
 John.greeting();
 
-let Kirstie = new newManager("Manager", "15", "Business");
+let Kirstie = new Manager("Kirstie","Manager", "15", "Business", "05-31-2018");
 Kirstie.managerInfo();
 
-let Sara = new newDesigner("Designer", "12", "Graphic Arts")
+let Sara = new Designer("Sara","Designer", "12", "Graphic Arts");
 Sara.designerInfo();
+
+let Erica = new SalesAssociate("Erica", "Sales Associate", "18", "Marketing", "05-30-2018");
+Erica.salesAssociateInfo();
 
 
 
